@@ -1,5 +1,5 @@
 # EventVLAD
-Codebase for the 2021 IROS paper "EventVLAD: Visual Place Recognition with Reconstructed Edges from Event Cameras" [pdf] (https://ieeexplore.ieee.org/document/9635907)
+Codebase for the 2021 IROS paper "EventVLAD: Visual Place Recognition with Reconstructed Edges from Event Cameras" [pdf] (https://ieeexplore.ieee.org/document/9635907).
 
 Please refer to the Pytorch-NetVLAD implementation in:
 https://github.com/Nanne/pytorch-NetVlad
