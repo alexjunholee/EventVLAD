@@ -26,7 +26,7 @@ print('Loading the Model')
 checkpoint = torch.load('./model_state_210211')
 
 imdir = '/home/jhlee/data/carla/'
-net = VDN(3, slope=0.2, dep_U=5, dep_S=5)
+net = EventDenoiser(3, slope=0.2, dep_U=5, dep_S=5)
 if use_gpu:
     net = torch.nn.DataParallel(net).cuda()
     net.load_state_dict(checkpoint)
