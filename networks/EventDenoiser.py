@@ -20,7 +20,7 @@ def weight_init_kaiming(net):
 
 class EventDenoiser(nn.Module):
     def __init__(self, input_images, dep_S=5, dep_U=4, slope=0.2):
-        super(VDN, self).__init__()
+        super(EventDenoiser, self).__init__()
         config = {'num_bins' : 3}
         self.ReconNet = RecurrUNet(num_bins = 3, in_channels = 1, out_channels = 1, depth=dep_U, slope=slope)
         self.ErrorNet = DnCNN(in_channels = 3, out_channels = 1, dep=dep_S, num_filters=64, slope=slope)
