@@ -23,7 +23,7 @@ testseq = 'base'
 
 # load the pretrained model
 print('Loading the Model')
-checkpoint = torch.load('./model_state_210211')
+checkpoint = torch.load('./EventDenoiser_210227')
 
 imdir = '/home/jhlee/data/carla/'
 net = EventDenoiser(3, slope=0.2, dep_U=5, dep_S=5)
