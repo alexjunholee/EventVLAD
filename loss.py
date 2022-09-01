@@ -1,7 +1,32 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+import numpy as np
 
+from math import pi, log
+from ssim import msssim, ssim
+
+def loss_denoise(evterr_day, im_gt):
+    '''
+	Size of Inputs:
+		evterr_day  = N * 2 * W * H
+		im_gt       = N * 1 * W * H
+    '''
+    #for training phase 1 (recon)
+    day_event = evterr_day[:,0,]
+    ssim_recon = 1-msssim(im_gt.clamp(min=0, max=1), day_event[:,np.newaxis,].clamp(min=0, max=1), window_size=11, size_average=True)
+    loss = ssim_recon 
+    
+    #for training phase 2 (masking)
+    
+#    day_error = evterr_day[:,1,]
+#    day_corrt = day_event.detach() * day_error
+#    ssim_loss_day = 1-msssim(im_gt[:,0:1,].clamp(min=0, max=1), day_corrt[:,np.newaxis,].clamp(min=0, max=1), window_size=11, size_average=True)
+#    l1_loss = torch.sum(torch.abs(im_gt[:,0,] - day_event))
+#    l1_mask_loss = torch.sum(torch.abs(day_corrt - im_gt[:,0,]))
+#    loss = 0.1*ssim_loss_day + 0.1*ssim_mask_loss + l1_mask_loss + l1_loss 
+    
+    return loss
 
 class HardTripletLoss(nn.Module):
     """Hard/Hardest Triplet Loss
