@@ -9,10 +9,12 @@ https://github.com/Nanne/pytorch-NetVlad
 ### Pretrained weights
 
 The pretrained weight for event-based place recognition can be downloaded from:
+
 https://drive.google.com/file/d/1rSIhH1pk8ADxfqYQXoos_hTuWyfiWSu3/view?usp=sharing
 
 For event denoiser:
-https://drive.google.com/file/d/1iKqApIAKtlH0Na8qIZgEwUdvHJ-FJ4y0/view?usp=sharing
+
+https://drive.google.com/file/d/1D1tHHSRd-2iVfD4GuEz0jHDlh7evkzf6/view?usp=sharing
 
 
 
