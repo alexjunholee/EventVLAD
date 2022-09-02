@@ -13,8 +13,10 @@ The pretrained weight for event-based place recognition can be downloaded from:
 https://drive.google.com/file/d/1rSIhH1pk8ADxfqYQXoos_hTuWyfiWSu3/view?usp=sharing
 
 For event denoiser:
+
 (carla)
 https://drive.google.com/file/d/1D1tHHSRd-2iVfD4GuEz0jHDlh7evkzf6/view?usp=sharing
+
 (brisbane)
 https://drive.google.com/file/d/1xdoGI7vmNelaR_D9-FUk5SbB3webqa5c/view?usp=sharing
 
