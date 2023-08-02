@@ -6,7 +6,7 @@ import torch
 import torch.nn as nn
 from torch.autograd import Function as autoF
 from scipy.special import gammaln
-from skimage.measure import compare_psnr, compare_ssim
+from skimage.metrics import peak_signal_noise_ratio, structural_similarity
 from skimage import img_as_ubyte
 import numpy as np
 import sys
@@ -18,10 +18,10 @@ def ssim_index(im1, im2):
         im1, im2: np.uint8 format
     '''
     if im1.ndim == 2:
-        out = compare_ssim(im1, im2, data_range=255, gaussian_weights=True,
+        out = structural_similarity(im1, im2, data_range=255, gaussian_weights=True,
                                                     use_sample_covariance=False, multichannel=False)
     elif im1.ndim == 3:
-        out = compare_ssim(im1, im2, data_range=255, gaussian_weights=True,
+        out = structural_similarity(im1, im2, data_range=255, gaussian_weights=True,
                                                      use_sample_covariance=False, multichannel=True)
     else:
         sys.exit('Please input the corrected images')
@@ -70,7 +70,7 @@ def batch_PSNR(img, imclean):
     Iclean = img_as_ubyte(Iclean)
     PSNR = 0
     for i in range(Img.shape[0]):
-        PSNR += compare_psnr(Iclean[i,:,:,:], Img[i,:,:,:], data_range=255)
+        PSNR += peak_signal_noise_ratio(Iclean[i,:,:,:], Img[i,:,:,:], data_range=255)
     return (PSNR/Img.shape[0])
 
 def batch_SSIM(img, imclean):
