@@ -26,6 +26,7 @@ https://drive.google.com/file/d/1rSIhH1pk8ADxfqYQXoos_hTuWyfiWSu3/view?usp=shari
 ### Run your example
 
 - Preprocess ViViD, create event frames
+  
 ```python process_img.py seqname dst_folder```
 
   Running the above sample with the downloaded bagfile, will create a directory (dst_folder) and save images / gps coord.
