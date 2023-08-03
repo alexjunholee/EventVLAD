@@ -25,6 +25,15 @@ https://drive.google.com/file/d/1rSIhH1pk8ADxfqYQXoos_hTuWyfiWSu3/view?usp=shari
 
 ### Run your example
 
+- Preprocess ViViD, create event frames
+```python process_img.py seqname dst_folder```
+
+  Running the above sample with the downloaded bagfile, will create a directory (dst_folder) and save images / gps coord.
+  
+```python process_dvs.py seqname path_prefix```
+  
+  Running the above sample with the preprocessed image directory and bagfile, will create a set of event images based using parameters (5ms, 1% threshold).
+
 - Event denoiser
   
 ```python denoise_sample.py```
